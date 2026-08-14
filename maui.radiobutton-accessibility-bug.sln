@@ -1,0 +1,25 @@
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 18
+VisualStudioVersion = 18.8.12105.206
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MauiAppRadioButtonAccessibilityBug", "MauiApp.RadioButtonAccessibilityBug\MauiAppRadioButtonAccessibilityBug.csproj", "{65FF8167-3BA2-4BBC-9BE9-204B39C83448}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65FF8167-3BA2-4BBC-9BE9-204B39C83448}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65FF8167-3BA2-4BBC-9BE9-204B39C83448}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65FF8167-3BA2-4BBC-9BE9-204B39C83448}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{65FF8167-3BA2-4BBC-9BE9-204B39C83448}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65FF8167-3BA2-4BBC-9BE9-204B39C83448}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {64ADA062-A83F-41E1-95EB-E11095BC36AA}
+	EndGlobalSection
+EndGlobal

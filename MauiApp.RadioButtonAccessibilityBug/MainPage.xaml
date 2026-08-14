@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiAppRadioButtonAccessibilityBug.MainPage"
+             Title="RadioButton Accessibility Bug Demo">
+
+    <ContentPage.Resources>
+        <Style TargetType="RadioButton"
+               x:Key="CustomRadioButtonStyle">
+            <Setter Property="Padding"
+                    Value="0" />
+            <Setter Property="BackgroundColor"
+                    Value="Transparent" />
+            <Setter Property="ControlTemplate">
+                <Setter.Value>
+                    <ControlTemplate x:DataType="RadioButton">
+                        <Border Padding="12,8"
+                                StrokeThickness="2"
+                                Stroke="Gray"
+                                StrokeShape="RoundRectangle 8">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CheckedStates">
+                                    <VisualState x:Name="Checked">
+                                        <VisualState.Setters>
+                                            <Setter Property="Border.BackgroundColor"
+                                                    Value="LightBlue" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                    <VisualState x:Name="Unchecked">
+                                        <VisualState.Setters>
+                                            <Setter Property="Border.BackgroundColor"
+                                                    Value="White" />
+                                        </VisualState.Setters>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <Label Text="{TemplateBinding Content}"
+                                   VerticalOptions="Center"
+                                   HorizontalOptions="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </ContentPage.Resources>
+
+    <ScrollView Padding="16,0">
+
+        <VerticalStackLayout Spacing="10">
+            <Label Text="❌ Custom Styled RadioButtons — BUG"
+                   FontAttributes="Bold"
+                   TextColor="Red"
+                   FontSize="14" />
+
+            <VerticalStackLayout Spacing="10">
+                <RadioButton Content="Option 1"
+                             IsChecked="True"
+                             GroupName="CustomGroup"
+                             Style="{StaticResource CustomRadioButtonStyle}"
+                             AutomationId="RadioButton_Styled_Option1" />
+
+                <RadioButton Content="Option 2"
+                             GroupName="CustomGroup"
+                             Style="{StaticResource CustomRadioButtonStyle}"
+                             AutomationId="RadioButton_Styled_Option2" />
+
+                <RadioButton Content="Option 3"
+                             GroupName="CustomGroup"
+                             Style="{StaticResource CustomRadioButtonStyle}"
+                             AutomationId="RadioButton_Styled_Option3" />
+            </VerticalStackLayout>
+
+            <Label Text="✓ Standard RadioButtons (Default) — WORKS"
+                   FontAttributes="Bold"
+                   TextColor="Green"
+                   FontSize="14" />
+
+            <HorizontalStackLayout Spacing="10"
+                                   Padding="10">
+                <RadioButton Content="A"
+                             IsChecked="True"
+                             GroupName="StandardGroup"
+                             AutomationId="RadioButton_Standard_A" />
+                <RadioButton Content="B"
+                             GroupName="StandardGroup"
+                             AutomationId="RadioButton_Standard_B" />
+                <RadioButton Content="C"
+                             GroupName="StandardGroup"
+                             AutomationId="RadioButton_Standard_C" />
+            </HorizontalStackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
