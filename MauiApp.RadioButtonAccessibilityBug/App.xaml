@@ -5,7 +5,6 @@
              x:Class="MauiAppRadioButtonAccessibilityBug.App">
     <Application.Resources>
         <ResourceDictionary>
-            <local:EqualityConverter x:Key="EqualityConverter" />
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Resources/Styles/Colors.xaml" />
                 <ResourceDictionary Source="Resources/Styles/Styles.xaml" />
